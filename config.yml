@@ -21,6 +21,21 @@ vagrant_cpus: 2
 ansible_os_family: Debian
 #ansible_os_family: RedHat
 
+# Server Extras
+installed_extras:
+  - drush
+  - mailhog
+  - memcached
+  - phpmyadmin
+  - pimpmylog
+  - solr
+  - xdebug
+  - xhprof
+  - nodejs
+  - varnish  
+  # - checkpoint
+  
+
 # Apt
 apt_enabled: yes              # Enable the role
 apt_cache_valid_time: 3600    # Time (in seconds) the apt cache stays valid
@@ -65,24 +80,10 @@ apache_vhosts:
   - {servername: "local.xhprof.dev", documentroot: "/usr/share/php/xhprof_html"}
   - {servername: "local.pimpmylog.dev", documentroot: "/usr/share/php/pimpmylog"}
 
-apache_listen_port: 80
+apache_listen_port: 8080
 apache_server_admin: chris.smith@opin.ca
 apache_error_log_root: /var/log/apache2/apache.error.log
 apache_access_log_root: /var/log/apache2/apache.access.log
-
-# Server Extras
-installed_extras:
-  - drush
-  - mailhog
-  - memcached
-  - phpmyadmin
-  - pimpmylog
-  - solr
-  - xdebug
-  - xhprof
-  - nodejs
-  # - varnish  
-  # - checkpoint
 
 # Firewall
 firewall_allowed_tcp_ports:
@@ -102,11 +103,17 @@ drupal_mysql_user: root
 drupal_mysql_password: root
 drupal_mysql_database: drupal
 
-# Varnish 4.x configuration
-# Control Key: 14bac2e6-1e34-4770-8078-974373b76c90
-# varnish_use_default_vcl: false
-# varnish_listen_port: 80
-# varnish_storage: "malloc,256m"
+# Varnish Configuration
+varnish_use_default_vcl: true
+varnish_default_vcl_template_path: default.vcl.j2
+varnish_default_backend_host: {{ vagrant_ip }}
+varnish_default_backend_port: "8080"
+varnish_listen_port: "80"
+varnish_secret: "14bac2e6-1e34-4770-8078-974373b76c90"
+varnish_config_path: /etc/varnish
+varnish_admin_listen_host: {{ vagrant_ip }}
+varnish_admin_listen_port: "6082"
+varnish_storage: "file,/var/lib/varnish/varnish_storage.bin,256M"
 
 # PHP Configuration. 
 php_version: "5.5"
