@@ -1,0 +1,128 @@
+---
+# Vagrant hostname and IP configuration.
+vagrant_hostname: local.checkpoint.dev
+vagrant_ip: 10.10.10.10
+vagrant_user: vagrant
+vagrant_home: /home/vagrant
+vagrant_webroot: /var/www/drupal
+
+# Synced Folders
+vagrant_synced_folders:
+  - local_path: ~/Sites/checkpoint
+    destination: /var/www
+    id: drupal
+    type: nfs
+    create: true
+
+# Memory and CPU to use for this VM.
+vagrant_memory: 4096
+vagrant_cpus: 2
+
+ansible_os_family: Debian
+#ansible_os_family: RedHat
+
+# Apache
+apache_vhosts:
+  - {servername: "{{ vagrant_hostname }}", documentroot: "{{ vagrant_webroot }}"}
+  - {servername: "local.xhprof.dev", documentroot: "/usr/share/php/xhprof_html"}
+  - {servername: "local.pimpmylog.dev", documentroot: "/usr/share/php/pimpmylog"}
+
+apache_listen_port: 80
+apache_server_admin: chris.smith@opin.ca
+apache_error_log_root: /var/log/apache2/apache.error.log
+apache_access_log_root: /var/log/apache2/apache.access.log
+
+# Server Extras
+installed_extras:
+  - drush
+  - mailhog
+  - memcached
+  - phpmyadmin
+  - pimpmylog
+  - solr
+  - xdebug
+  - xhprof
+  - nodejs
+  # - varnish  
+  # - checkpoint
+
+# Firewall
+firewall_allowed_tcp_ports:
+  - "22"
+  - "25"
+  - "80"
+  - "443"
+  - "3306"
+  - "8025"
+  - "8080"
+  - "8443"
+  - "8983"
+  - "9000"
+
+# Drupal and MySQL Configuration
+drupal_mysql_user: root
+drupal_mysql_password: root
+drupal_mysql_database: drupal
+
+# Varnish 4.x configuration
+# Control Key: 14bac2e6-1e34-4770-8078-974373b76c90
+# varnish_use_default_vcl: false
+# varnish_listen_port: 80
+# varnish_storage: "malloc,256m"
+
+# PHP Configuration. 
+php_version: "5.5"
+php_memory_limit: "1024M"
+php_display_errors: "On"
+php_display_startup_errors: "On"
+php_realpath_cache_size: "1024K"
+php_sendmail_path: "/usr/sbin/ssmtp -t"
+
+# APC will be enabled for PHP < 5.5, OpCache for PHP 5.5+.
+php_apc_enabled_in_ini: true
+php_apc_shm_size: "128M"
+php_opcache_enabled_in_ini: true
+php_opcache_memory_consumption: "128"
+php_opcache_max_accelerated_files: 4096
+
+# Pimp my Log settings.
+pimpmylog_install_dir: /usr/share/php/pimpmylog
+pimpmylog_grant_all_privs: yes
+
+# XDebug
+php_xdebug_version: 2.3.2
+php_xdebug_default_enable: 1
+php_xdebug_coverage_enable: 1
+php_xdebug_cli_enable: 1
+php_xdebug_module_path: /usr/lib64/php/modules
+php_xdebug_remote_enable: "true"
+php_xdebug_remote_connect_back: "true"
+php_xdebug_remote_host: localhost
+php_xdebug_remote_port: "9000"
+php_xdebug_remote_log: /tmp/xdebug.log
+php_xdebug_idekey: netbeans-xdebug
+php_xdebug_max_nesting_level: 100
+
+# Disable main XDebug components unless needed.
+# php_xdebug_default_enable: 0
+# php_xdebug_coverage_enable: 0
+
+# Solr Configuration (if enabled above).
+solr_version: "4.10.4"
+solr_xms: "64M"
+solr_xmx: "128M"
+
+# Node JS Configuration
+nodejs_enabled: yes
+nodejs_repository: ppa:chris-lea/node.js
+nodejs_npm_modules: 
+  - jshint
+  - bower
+  - susy
+  - breakpoint-sass
+  - grunt-cli
+  - compass-importer
+  - grunt-browser-sync
+  - grunt-contrib-watch
+  - grunt-sass
+  - gulp
