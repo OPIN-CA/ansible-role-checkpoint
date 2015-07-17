@@ -38,26 +38,4 @@
   known_hosts: path="/etc/ssh/ssh_known_hosts"
                host="bitbucket.org"
                key="{{ bitbucket_key.stdout }}"
-  tags: [sshkeys]                
-
-- name: Generate key for Pantheon app server
-  shell: ssh-keyscan -p 2222 -t rsa,dsa appserver.dev.{{ pantheon_uid }}.drush.in
-  register: appserver_key
-  tags: [sshkeys]   
-
-- name: Add Pantheon Appserver to known hosts.
-  known_hosts: path="/etc/ssh/ssh_known_hosts"
-               host="appserver.dev.{{ pantheon_uid }}.drush.in"
-               key="{{ appserver_key.stdout }}"
-  tags: [sshkeys]                
-
-- name: SSH Keyscan Pantheon Code server
-  shell: ssh-keyscan -p 2222 -t rsa,dsa codeserver.dev.{{ pantheon_uid }}.drush.in
-  register: codeserver_key
-  tags: [sshkeys]   
-
-- name: Add Pantheon Codeserver to known hosts.
-  known_hosts: path="/etc/ssh/ssh_known_hosts"
-               host="codeserver.dev.{{ pantheon_uid }}.drush.in"
-               key="{{ codeserver_key.stdout }}"
-  tags: [sshkeys]               
+  tags: [sshkeys]
