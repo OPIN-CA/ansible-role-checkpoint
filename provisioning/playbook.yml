@@ -3,6 +3,16 @@
 
   vars_files:
     - ../config.yml
+    - ../config/apt.yml
+    - ../config/apache.yml
+    - ../config/drupal.yml
+    - ../config/firewall.yml
+    - ../config/nodejs.yml
+    - ../config/php.yml
+    - ../config/php_xdebug.yml
+    - ../config/pimpmylog.yml
+    - ../config/solr.yml
+    - ../config/varnish.yml  
  
   pre_tasks:
     - include: init.yml

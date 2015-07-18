@@ -34,15 +34,3 @@ installed_extras:
   - nodejs
   - varnish  
   # - checkpoint
-
-# Additional Configuration
-include_vars: config/apt.yml
-include_vars: config/apache.yml
-include_vars: config/drupal.yml
-include_vars: config/firewall.yml
-include_vars: config/nodejs.yml
-include_vars: config/php.yml
-include_vars: config/php_xdebug.yml
-include_vars: config/pimpmylog.yml
-include_vars: config/solr.yml
-include_vars: config/varnish.yml  
