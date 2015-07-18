@@ -36,13 +36,13 @@ installed_extras:
   # - checkpoint
 
 # Additional Configuration
-include: config/apt.yml
-include: config/apache.yml
-include: config/drupal.yml
-include: config/firewall.yml
-include: config/nodejs.yml
-include: config/php.yml
-include: config/php_xdebug.yml
-include: config/pimpmylog.yml
-include: config/solr.yml
-include: config/varnish.yml  
+include_vars: config/apt.yml
+include_vars: config/apache.yml
+include_vars: config/drupal.yml
+include_vars: config/firewall.yml
+include_vars: config/nodejs.yml
+include_vars: config/php.yml
+include_vars: config/php_xdebug.yml
+include_vars: config/pimpmylog.yml
+include_vars: config/solr.yml
+include_vars: config/varnish.yml  
