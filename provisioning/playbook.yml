@@ -3,7 +3,7 @@
 
   vars_files:
     - ../config.yml
-
+ 
   pre_tasks:
     - include: init.yml
 

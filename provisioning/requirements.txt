@@ -19,5 +19,6 @@ geerlingguy.daemonize
 geerlingguy.mailhog
 geerlingguy.java
 geerlingguy.solr
+geerlingguy.drupal
 Stouts.apt
 Stouts.nodejs
