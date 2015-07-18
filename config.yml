@@ -33,4 +33,4 @@ installed_extras:
   - xhprof
   - nodejs
   - varnish  
-  # - checkpoint
+  - drupal

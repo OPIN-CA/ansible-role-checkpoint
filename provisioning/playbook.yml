@@ -46,12 +46,5 @@
     - { role: geerlingguy.mailhog, when: '"mailhog" in installed_extras' }
     - { role: geerlingguy.java, when: '"solr" in installed_extras' }
     - { role: geerlingguy.solr, when: '"solr" in installed_extras' }
-
-    # Conditionally-installed roles (custom)
-    - { role: geerlingguy.drush, when: '"drush" in installed_extras' }
-    
-    # - { role: checkpoint, when: '"checkpoint" in installed_extras' }
-    
-    
-    # Conditionally-installed roles (Front-end Development)
-    
+    - { role: geerlingguy.drush, when: '"drush" in installed_extras' }    
+    - { role: geerlingguy.drupal, when: '"drupal" in installed_extras' }    

@@ -18,7 +18,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :private_network, ip: vconfig['vagrant_ip']
   config.ssh.insert_key = false
   # Add or remove SSH keys are required.
-  config.ssh.private_key_path = ['~/.vagrant.d/insecure_private_key', '~/.ssh/acquia', '~/.ssh/bitbucket', '~/.ssh/pantheon', '~/.ssh/github']
+  config.ssh.private_key_path = ['~/.vagrant.d/insecure_private_key', '~/.ssh/id_rsa']
   config.ssh.forward_agent = true
 	
   config.vm.box = "geerlingguy/ubuntu1404"
