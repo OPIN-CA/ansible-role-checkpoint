@@ -23,15 +23,15 @@ ansible_os_family: Debian
 
 # Server Extras
 installed_extras:
-  # - drush
-  # - mailhogx
-  # - memcached
-  # - phpmyadmin
-  # - pimpmylog
-  # - solr
-  # - selenium
-  # - xdebug
-  # - xhprof
-  # - nodejs
-  # - varnish  
-  # - drupal
+  - drush
+  - mailhogx
+  - memcached
+  - phpmyadmin
+  - pimpmylog
+  - solr
+  - selenium
+  - xdebug
+  - xhprof
+  - nodejs
+  - varnish  
+  - drupal
