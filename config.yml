@@ -29,6 +29,7 @@ installed_extras:
   - phpmyadmin
   - pimpmylog
   - solr
+  - selenium
   - xdebug
   - xhprof
   - nodejs

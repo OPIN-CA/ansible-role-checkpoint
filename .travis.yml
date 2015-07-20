@@ -9,7 +9,6 @@ before_install:
   - sudo add-apt-repository ppa:ondrej/php5 -y
   - sudo apt-get update -q
   - sudo apt-get update -qq
-  - sudo apt-get install curl
 
   # Remove MySQL. Completely and totally.
   - sudo apt-get remove --purge 'mysql*'
@@ -35,6 +34,13 @@ script:
 
   # Run the role/playbook with ansible-playbook.
   - "ansible-playbook -i 'localhost,' $PLAYBOOK --connection=local --sudo"
+
+  # Run the role/playbook again, checking to make sure it's idempotent.
+  #- >
+  #  ansible-playbook -i 'localhost,' $PLAYBOOK --connection=local --sudo
+  #  | grep -q 'changed=0.*failed=0'
+  #  && (echo 'Idempotence test: pass' && exit 0)
+  #  || (echo 'Idempotence test: fail' && exit 1)    
     
   # Make sure PHP is available.
   - >

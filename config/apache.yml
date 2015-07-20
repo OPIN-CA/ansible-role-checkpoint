@@ -1,9 +1,18 @@
 ---
 # Apache
+
+
+# Apache VirtualHosts. Add one for each site you are running inside the VM. For
+# multisite deployments, you can point multiple servernames at one documentroot.
 apache_vhosts:
   - {servername: "{{ vagrant_hostname }}", documentroot: "{{ vagrant_webroot }}"}
   - {servername: "local.xhprof.dev", documentroot: "/usr/share/php/xhprof_html"}
   - {servername: "local.pimpmylog.dev", documentroot: "/usr/share/php/pimpmylog"}
+
+apache_mods_enabled:
+  - expires.load
+  - ssl.load
+  - rewrite.load
 
 apache_listen_port: 8080
 apache_server_admin: chris.smith@opin.ca

@@ -1,5 +1,4 @@
 ---
-
 # PHP Versions
 - name: Add repository for PHP 5.5.
   apt_repository: repo='ppa:ondrej/php5'
