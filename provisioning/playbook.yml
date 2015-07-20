@@ -8,6 +8,7 @@
     - ../config/composer.yml
     - ../config/drupal.yml
     - ../config/firewall.yml
+    - ../config/mysql.yml
     - ../config/nodejs.yml
     - ../config/php.yml
     - ../config/php_xdebug.yml

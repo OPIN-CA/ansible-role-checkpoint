@@ -1,0 +1,19 @@
+---
+# MySQL Configuration.
+mysql_root_username: root
+mysql_root_password: root
+mysql_slow_query_log_enabled: true
+mysql_slow_query_time: 2
+
+# MySQL Databases and users. If build_from_makefile is true, first database will
+# be used for the makefile-built site.
+mysql_databases:
+  - name: "{{ drupal_mysql_database }}"
+    encoding: utf8
+    collation: utf8_general_ci
+
+mysql_users:
+  - name: "{{ drupal_mysql_user }}"
+    host: "%"
+    password: "{{ drupal_mysql_password }}"
+    priv: "{{ drupal_mysql_database }}.*:ALL"
