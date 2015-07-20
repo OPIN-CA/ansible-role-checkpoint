@@ -24,13 +24,13 @@
     - { role: Stouts.apt, tags: ['apt'] }    
     - { role: geerlingguy.firewall, tags: ['firewall'] }
     - { role: geerlingguy.git, tags: ['git'] }
-    - { role: geerlingguy.apache, tags: ['apache'] }
-    - { role: geerlingguy.mysql, tags: ['mysql'] }    
+    - { role: geerlingguy.apache, tags: ['apache'] }    
     - { role: geerlingguy.postfix, tags: ['postfix'] }    
     - { role: geerlingguy.php, tags: ['php'] }    
     - { role: geerlingguy.php-pecl, tags: ['php'] }
     - { role: geerlingguy.php-mysql, tags: ['php'] }
-    - { role: geerlingguy.composer, tags: ['composer'] }    
+    - { role: geerlingguy.composer, tags: ['composer'] }
+    - { role: geerlingguy.mysql, tags: ['mysql'] }
     - { role: Stouts.nodejs, when: '"nodejs" in installed_extras' }
     
     # Conditionally-installed roles
