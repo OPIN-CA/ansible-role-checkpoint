@@ -35,8 +35,9 @@
     - { role: Stouts.nodejs, when: '"nodejs" in installed_extras' }
     
     # Conditionally-installed roles
-    # - { role: geerlingguy.memcached, when: '"memcached" in installed_extras' }
-    # - { role: geerlingguy.varnish, when: '"varnish" in installed_extras' }
+    - { role: geerlingguy.memcached, when: '"memcached" in installed_extras' }
+    - { role: geerlingguy.drush, when: '"drush" in installed_extras' }    
+    - { role: geerlingguy.varnish, when: '"varnish" in installed_extras' }
     # - { role: geerlingguy.php-memcached, when: '"memcached" in installed_extras' }
     # - { role: geerlingguy.php-xdebug, when: '"xdebug" in installed_extras' }
     # - { role: geerlingguy.php-xhprof, when: '"xhprof" in installed_extras' }
@@ -47,5 +48,5 @@
     # - { role: arknoll.selenium, when: '"selenium" in installed_extras' }
     # - { role: geerlingguy.java, when: '"solr" in installed_extras' }
     # - { role: geerlingguy.solr, when: '"solr" in installed_extras' }
-    # - { role: geerlingguy.drush, when: '"drush" in installed_extras' }    
+    
     # - { role: geerlingguy.drupal, when: '"drupal" in installed_extras' }    
