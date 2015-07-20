@@ -26,7 +26,7 @@ installed_extras:
   - drush
   - mailhogx
   - memcached
-  - phpmyadmin
+  # - phpmyadmin
   - pimpmylog
   - solr
   - selenium
