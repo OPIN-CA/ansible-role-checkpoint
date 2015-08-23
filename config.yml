@@ -29,9 +29,9 @@ installed_extras:
   - phpmyadmin
   - pimpmylog
   - solr
-  - selenium
+  # - selenium
   - xdebug
   - xhprof
-  - nodejs
-  - varnish  
+  # - nodejs
+  # - varnish  
   - drupal

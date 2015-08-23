@@ -1,7 +1,6 @@
 ---
 # Apache
 
-
 # Apache VirtualHosts. Add one for each site you are running inside the VM. For
 # multisite deployments, you can point multiple servernames at one documentroot.
 apache_vhosts:
@@ -14,7 +13,7 @@ apache_mods_enabled:
   - ssl.load
   - rewrite.load
 
-apache_listen_port: 8080
+apache_listen_port: 80
 apache_server_admin: chris.smith@opin.ca
 apache_error_log_root: /var/log/apache2/apache.error.log
 apache_access_log_root: /var/log/apache2/apache.access.log

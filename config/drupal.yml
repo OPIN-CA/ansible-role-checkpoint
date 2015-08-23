@@ -2,7 +2,8 @@
 # Drupal Configuration
 
 # The core version you want to use (e.g. 6.x, 7.x, 8.0.x).
-drupal_core_version: "7.x"
+# drupal_core_version: "7.x"
+drupal_core_version: "HEAD"
 
 # The path where Drupal will be downloaded and installed.
 drupal_core_path: "{{ vagrant_webroot }}"
@@ -11,7 +12,7 @@ drupal_core_path: "{{ vagrant_webroot }}"
 drupal_domain: "{{ vagrant_hostname }}"
 
 # Your Drupal site name.
-drupal_site_name: "Drupal {{ drupal_core_version }}"
+drupal_site_name: "Checkpoint"
 
 # Your Drupal site admin account credentials.
 drupal_admin_name: admin
@@ -26,7 +27,7 @@ drupal_mysql_password: root
 drupal_mysql_database: drupal
 
 # The Drupal git url from which Drupal will be cloned.
-drupal_repo_url: "http://git.drupal.org/project/drupal.git"
+drupal_repo_url: "https://github.com/OPIN-INTRANET/checkpoint.git"
 
 # Whether to update the repo above to the latest commit in the branch identified
 # by `drupal_core_version` (the git tag or branch) whenever this playbook runs.
@@ -34,4 +35,4 @@ drupal_keep_updated: no
 
 # The Drupal install profile to be used
 # See note in readme if installing the Drupal 6.x
-drupal_install_profile: standard
+drupal_install_profile: checkpoint
